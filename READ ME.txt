@@ -1,0 +1,36 @@
+Resource Allocation in post disaster scenario using evolutionary algorithm – Particle Swarm Optimization (PSO), Adaptive Particle Swarm Optimization (APSO), Time Varying Particle Swarm Optimization (TVPSO), Differential Evolution (DE), Genetic Algorithm (GA).
+
+Platform Used: MATLAB R2016a (9.0)
+
+1.	Resource Allocation using PSO:
+	It is the resource allocation program using basic PSO where the values of w, c1 and c2 are constant - w=0.2, c1=0.4 and c2=1.6. 
+	For each resource type we have 	initialized 4 particles ( pop_food ) on which the PSO algorithm has been applied. 
+	Here Fitness_Function() has been used to evaluate the fitness value (pop_food(i).fitness ) of each particle in each iteration. 
+	The final allocation has been displayed as output. The plot of iteration vs fitness value has also been shown.
+
+2.	Resource Allocation using TVPSO:
+	The same PSO algorithm has been used but here the values of w, c1 and c2 are not constant. 
+	Here the value of w decreases 	linearly from 0.5 to 0.0. 
+	Similarly, value of c1 decreases linearly from 2.0 to 0.0 and value of c2 increases linearly from 0.0 to 2.0. the same 	Fitness_Function() has been used for evaluating the fitness values (pop_food(i).fitness ) of each particle in every iteration.
+
+3.	Resource Allocation using APSO:
+	This resource allocation program follows the same PSO algorithm, only here in each iteration the distance (pop_food(i).dist ) between each particle is calculated to find the state ( state_food ) of the particles which determines the nature (increasing / decreasing) and value of w, c1 and c2 for that iteration. 
+	Here the value of w is bounded by [0.0,0.5] and the upper boundary of the sum of c1 and c2 is 3. 
+	The same Fitness_Function() has been used here too.
+
+4.	Resource Allocation using DE:
+	In this resource allocation program, the differential evolution (DE) algorithm has been used with crossover constant (pCR) = 0.6 and F = 0.5. 
+	In this program also the same Fitness_Function() has been used to evaluate the fitness value of each particle in every iteration. 
+	Here the iteration wise allocation of every particle has been shown as output. 
+	Finally, the plot of iteration vs fitness value has also been shown.
+
+5.	Resource Allocation using GA: 
+	The Genetic Algorithm has been used with crossover rate in any arbitrary value in [0.5,0.9] (for Crossover < 1) with mutation rate as 0.01. 
+	In this program also the same Fitness_Function() has been used to evaluate the fitness value of each particle in every iteration. 
+	The plot of iteration vs fitness value has also been shown.
+
+
+6.	Fitness_Function:
+	This function has been used in every resource allocation program to evaluate the fitness values (pop_food(i).fitness) of particles in every iteration. 
+	It takes the allocation (ex: pop_food(i).sol), maximum allocation (ex: pcost_food) and total allocable amount (ex: totafood) as input and returns the fitness value.
+ 
